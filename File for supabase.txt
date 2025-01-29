@@ -4,9 +4,40 @@ CREATE TABLE todo (
     text TEXT NOT NULL
 );
 
-
-
 INSERT INTO todo (text) 
 VALUES ('This is my first todo'), 
        ('Another important task'), 
        ('Complete Supabase setup');
+
+
+
+
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT now()
+);
+
+
+INSERT INTO users (name, email) 
+VALUES ('John Doe', 'john.doe@example.com'), 
+       ('Jane Doe', 'jane.doe@example.com');
+
+
+
+
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    product_code TEXT NOT NULL UNIQUE,
+    price NUMERIC(10, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT now()
+);
+
+
+INSERT INTO products (name, product_code, price) 
+VALUES ('Laptop', 'PROD001', 1500.00), 
+       ('Phone', 'PROD002', 800.00);
