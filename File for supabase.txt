@@ -1,0 +1,12 @@
+CREATE TABLE todo (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    created_at TIMESTAMP DEFAULT now(),
+    text TEXT NOT NULL
+);
+
+
+
+INSERT INTO todo (text) 
+VALUES ('This is my first todo'), 
+       ('Another important task'), 
+       ('Complete Supabase setup');
